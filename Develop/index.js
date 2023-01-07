@@ -1,9 +1,12 @@
-// TODO: Include packages needed for this application
+//packages
 const inquirer = require('inquirer')
 const fs = require('fs')
+
+//const README = generatePage(questions)
+
 //const pageTemplate = require('./develop/pageTemplate')
 
-// TODO: Create an array of questions for user input
+//question prompt function
 const questions = () => {
     return inquirer.prompt([
         {
@@ -34,19 +37,19 @@ const questions = () => {
 questions().then(answers => console.log(answers))
 
 // TODO: Create a function to write README file
-fs.writeFile('./README.md', generatePage(), err => {
+// fs.writeFile('./README.md', README, err => {
 
-    if (err) throw new Error(err)
+//     if (err) throw new Error(err)
 
-    console.log('portfolio complete... check out README.md to see the output')
-})
+//     console.log('portfolio complete... check out README.md to see the output')
+// })
 
-const writeToFile = (fileName, data) => {
+// const writeToFile = (fileName, data) => {
 
-}
+// }
 
 // TODO: Create a function to initialize app
-function init() {}
+//function init() {}
 
 // Function call to initialize app
-init();
+//init();
