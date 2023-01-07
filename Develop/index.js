@@ -1,7 +1,8 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer')
 const fs = require('fs')
-const pageTemplate = require('./develop/pageTemplate')
+//const pageTemplate = require('./develop/pageTemplate')
+
 // TODO: Create an array of questions for user input
 const questions = () => {
     return inquirer.prompt([
@@ -19,7 +20,7 @@ const questions = () => {
         {
             type: 'input',
             name: 'email',
-            message: 'provide you email address'
+            message: 'provide you email address',
             validate: userEmail => {
                 if (userEmail) {return true}
                 else {
@@ -28,10 +29,21 @@ const questions = () => {
             }
         },
     ])
-}    
+}
+
+questions().then(answers => console.log(answers))
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+fs.writeFile('./README.md', generatePage(), err => {
+
+    if (err) throw new Error(err)
+
+    console.log('portfolio complete... check out README.md to see the output')
+})
+
+const writeToFile = (fileName, data) => {
+
+}
 
 // TODO: Create a function to initialize app
 function init() {}
