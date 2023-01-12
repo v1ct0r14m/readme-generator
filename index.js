@@ -1,10 +1,10 @@
 //packages
 const inquirer = require('inquirer')
-const fs = require('fs')
+const fs = require('fs');
 const generateREADME = require('./utils/generateREADME')
 
 //question prompt function
-const questions = () => {
+
     return inquirer.prompt([
         {
             type: 'input',
@@ -68,7 +68,7 @@ const questions = () => {
         {
             type: 'input',
             name: 'usage',
-            message: 'provide instructions for use' (required),
+            message: 'provide instructions for use (required)',
             validate: usageInput => {
                 if (usageInput) {
                     return true
@@ -101,29 +101,18 @@ const questions = () => {
     ])
     .then(answers => {
         const readme = generateREADME(answers)
+            return new Promise((resolve, reject) => {
+                fs.writeFile('./dist/README.md', readme, err => {
+                    if (err) {
+                        reject(err)
 
-        fs.writeFile('./dist/readme-guide.md',readme , err => {
-            if (err) throw err
-       })
-
-       console.log('you generated your README :^D')
+                    return
+                }
+                resolve({
+                    ok:true,
+                    message: 'you generated your README :^D'
+                })    
+        })
     })
-}
+})
 
-// TODO: Create a function to write README file
-// fs.writeFile('./README.md', README, err => {
-
-//     if (err) throw new Error(err)
-
-//     console.log('portfolio complete... check out README.md to see the output')
-// })
-
-// const writeToFile = (fileName, data) => {
-
-// }
-
-// TODO: Create a function to initialize app
-//function init() {}
-
-// Function call to initialize app
-//init();
