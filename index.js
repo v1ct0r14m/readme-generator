@@ -1,11 +1,7 @@
 //packages
 const inquirer = require('inquirer')
 const fs = require('fs')
-
-
-//const README = generatePage(questions)
-
-//const pageTemplate = require('./develop/pageTemplate')
+const generateREADME = require('./utils/generateREADME')
 
 //question prompt function
 const questions = () => {
@@ -106,13 +102,13 @@ const questions = () => {
     .then(answers => {
         const readme = generateREADME(answers)
 
-        fs.writeFile('README.md',readme , err => {
-        err ? console.log(err) : console.log('Success!')
+        fs.writeFile('./dist/readme-guide.md',readme , err => {
+            if (err) throw err
        })
+
+       console.log('you generated your README :^D')
     })
 }
-
-questions().then(answers => console.log(answers))
 
 // TODO: Create a function to write README file
 // fs.writeFile('./README.md', README, err => {
