@@ -10,5 +10,14 @@
   "license": "ISC",
   "dependencies": {
     "inquirer": "^8.2.4"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/v1ct0r14m/readme-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/v1ct0r14m/readme-generator/issues"
+  },
+  "homepage": "https://github.com/v1ct0r14m/readme-generator#readme"
 }
