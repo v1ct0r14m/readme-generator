@@ -4,8 +4,6 @@ README GENERATOR
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-
 The README Generator is meant to replace the hassle of having to configure and type out an entire README.md file from Scratch. Provided with all the appropriate responses, the generator will take the information from the prompts and apply them to the ready-made template, saving precious developer time and energy as the application simplifies the burden for beginners and veterans alike, and provides high quality README.md's with ease.
 
 In the process of creating this application, I learned the proper syntax needed to run specific callbacks and promises, along with npm commands to navigate the node environment. Overall, the important concept of modules is also better situated in my mind.
